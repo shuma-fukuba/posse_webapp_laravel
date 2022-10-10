@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  db:
+    container_name: webapp_db_dev
+    build:
+      context: ./docker/db
+    ports:
+      - 3306:3306
+    volumes:
+      - laravel_db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=laravel
+      - MYSQL_USER=laravel
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
+    platform: linux/x86_64
+  app:
+    container_name: webapp_app_dev
+    build:
+      context: ./docker/app
+    volumes:
+      - ./src:/laravel/api
+    depends_on: ["db"]
+  web:
+    container_name: webapp_web_dev
+    build:
+      context: ./docker/web
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/work/backend
+      - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
+      - ./src/public:/var/www/html/laravel/public
+      - ./src/storage:/var/www/html/laravel/public/storage
+    depends_on: ["app"]
+
+volumes:
+  laravel_db:
