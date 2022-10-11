@@ -23,10 +23,8 @@ RUN apt-get update && \
   mkdir /var/run/php-fpm && \
   docker-php-ext-install intl pdo_mysql zip bcmath && \
   composer config -g process-timeout 3600 && \
-  composer config -g repos.packagist composer https://packagist.org \
-  && pecl install xdebug \
-  && docker-php-ext-enable xdebug
+  composer config -g repos.packagist composer https://packagist.org
 
-COPY ./php.ini /usr/local/etc/php/php.ini
+COPY ./usr/local/etc/php/php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /work/backend

@@ -20,7 +20,7 @@ services:
     build:
       context: ./docker/app
     volumes:
-      - ./src:/laravel/api
+      - ./src:/work/backend
     depends_on: ["db"]
   web:
     container_name: webapp_web_dev
@@ -30,9 +30,6 @@ services:
       - 80:80
     volumes:
       - ./src:/work/backend
-      - ./docker/web/default.conf:/etc/nginx/conf.d/default.conf
-      - ./src/public:/var/www/html/laravel/public
-      - ./src/storage:/var/www/html/laravel/public/storage
     depends_on: ["app"]
 
 volumes:

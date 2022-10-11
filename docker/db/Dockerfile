@@ -1,5 +1,5 @@
-FROM mysql:8.0.30
+FROM mysql:8.0
 
 ENV TZ=UTC
 
-COPY ./my.cnf /etc/mysql/conf.d/my.cnf
+COPY ./etc/my.cnf /etc/my.cnf
