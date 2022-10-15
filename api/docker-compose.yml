@@ -7,6 +7,11 @@ services:
       context: ./docker/db
     ports:
       - 3306:3306
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_DATABASE=webapp
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=password
     volumes:
       - laravel_db:/var/lib/mysql
     platform: linux/x86_64

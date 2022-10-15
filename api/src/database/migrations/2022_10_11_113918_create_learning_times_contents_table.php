@@ -15,7 +15,11 @@ class CreateLearningTimesContentsTable extends Migration
     {
         Schema::create('learning_times_contents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->unsignedBigInteger('learning_time_id');
+            $table->unsignedBigInteger('content_id');
+
+            $table->foreign('learning_time_id')->references('id')->on('learning_times')->onDelete('cascade');
+            $table->foreign('content_id')->references('id')->on('learning_contents')->onDelete('cascade');
             $table->timestamps();
         });
     }

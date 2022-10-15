@@ -28,6 +28,8 @@ class CreateLearningTimesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('learning_times_contents');
+        Schema::dropIfExists('learning_times_languages');
         Schema::dropIfExists('learning_times');
     }
 }

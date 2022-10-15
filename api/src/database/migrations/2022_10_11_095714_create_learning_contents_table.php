@@ -27,6 +27,7 @@ class CreateLearningContentsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('learning_times_contents');
         Schema::dropIfExists('learning_contents');
     }
 }
