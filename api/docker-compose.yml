@@ -9,11 +9,6 @@ services:
       - 3306:3306
     volumes:
       - laravel_db:/var/lib/mysql
-    environment:
-      - MYSQL_DATABASE=laravel
-      - MYSQL_USER=laravel
-      - MYSQL_PASSWORD=password
-      - MYSQL_ROOT_PASSWORD=password
     platform: linux/x86_64
   app:
     container_name: webapp_app_dev

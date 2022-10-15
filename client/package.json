@@ -1,0 +1,33 @@
+{
+  "name": "www-grit-partners",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.19.3",
+    "@emotion/react": "^11.10.4",
+    "antd": "^4.23.3",
+    "next": "^12.3.1",
+    "next-plugin-antd-less": "^1.8.0",
+    "next-with-less": "^2.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@emotion/babel-preset-css-prop": "^11.10.0",
+    "@types/node": "18.7.23",
+    "@types/react": "^18.0.21",
+    "babel-plugin-import": "^1.13.5",
+    "eslint": "^8.24.0",
+    "eslint-config-next": "^12.3.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}
